@@ -15,6 +15,6 @@ wl-clipboard
 swaybg
 
 # Other deps
-rofi
-fuzzel (replace rofi)
+rofi-wayland
+fuzzel (replace rofi?)
 cliphist

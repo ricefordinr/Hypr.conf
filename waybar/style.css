@@ -19,13 +19,15 @@ window#waybar.hidden {
 }
 
 tooltip {
-  color: @text;
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 10px;
+  color: @accent;
+  /* background: rgba(0, 0, 0, 0.8); */
+  background: @crust;
+  border-radius: 4px;
+  border: 2px solid @accent;
 }
 
 tooltip label {
-  color: @text;
+  color: @accent;
   padding-right: 2px;
   padding-left: 2px;
 }
@@ -47,8 +49,10 @@ tooltip label {
   font-weight: 900;
   box-shadow: none;
   text-shadow: none;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 6px;
+  padding-right: 6px;
   border-radius: 0px;
   animation: gradient_f 20s ease-in infinite;
   transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682);
@@ -56,15 +60,9 @@ tooltip label {
 
 #taskbar button.active,
 #workspaces button.active {
-  color: @text;
+  color: @crust;
   background: @accent;
-  text-shadow: 1px 1px #111;
-  /* box-shadow: 4px 4px @text; */
   border-radius: 3px;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  padding-left: 8px;
-  padding-right: 8px;
   animation: gradient_f 20s ease-in infinite;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
@@ -146,7 +144,7 @@ tooltip label {
 #pulseaudio-slider trough {
   min-width: 80px;
   min-height: 5px;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 #backlight-slider highlight,
@@ -154,7 +152,7 @@ tooltip label {
   background-color: @accent;
   border-color: @accent;
   min-height: 10px;
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 #custom-archicon {

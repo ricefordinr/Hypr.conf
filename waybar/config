@@ -18,7 +18,7 @@
     "modules-left": [
         "clock",
         "custom/separator#line",
-        "hyprland/workspaces#ger"
+        "hyprland/workspaces#kanji"
     ],
 
     "modules-center": [
