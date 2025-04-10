@@ -1,0 +1,172 @@
+{
+    "backlight": {
+        "interval": 2,
+            "align": 0,
+            "rotate": 0,
+            //"format": "{icon} {percent}%",
+            "format-icons": [
+                "",
+            "",
+            "",
+            "󰃝",
+            "󰃞",
+            "󰃟",
+            "󰃠"
+            ],
+            "format": "{icon}",
+            //"format-icons": ["","","","","","","","","","","","","","",""],
+            "tooltip-format": "backlight {percent}%",
+            "icon-size": 10,
+            "on-click": "",
+            "on-click-middle": "",
+            "on-click-right": "",
+            "on-update": "",
+            "on-scroll-up": "$HOME/.config/hypr/scripts/Brightness.sh --inc",
+            "on-scroll-down": "$HOME/.config/hypr/scripts/Brightness.sh --dec",
+            "smooth-scrolling-threshold": 1,
+    },
+
+        "battery": {
+            //"interval": 5,
+            "align": 0,
+            "rotate": 0,
+            //"bat": "BAT1",
+            //"adapter": "ACAD",
+            "full-at": 100,
+            "design-capacity": false,
+            "states": {
+                "good": 95,
+                "warning": 30,
+                "critical": 15
+            },
+            "format": "{icon} {capacity}%",
+            "format-charging": " {capacity}%",
+            "format-plugged": "󱘖 {capacity}%",
+            "format-alt-click": "click",
+            "format-full": "{icon} Full",
+            "format-alt": "{icon} {time}",
+            "format-icons": [
+                "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+            ],
+            "format-time": "{H}h {M}min",
+            "tooltip": true,
+            "tooltip-format": "{timeTo} {power}w",
+            "on-click-middle": "$HOME/.config/hypr/scripts/ChangeBlur.sh",
+            "on-click-right": "$HOME/.config/hypr/scripts/Wlogout.sh",
+        },
+
+        "clock": {
+            //"format": "{:%I:%M %p - %d/%b}", //for AM/PM
+            "format": "{:%H:%M - %a %d/%b}", // 24H
+            "tooltip": false
+        },
+
+        "tray": {
+            "icon-size": 20,
+            "spacing": 4,
+        },
+
+        "custom/separator#line": {
+            "format": "|",
+            "interval": "once",
+            "tooltip": false
+        },
+
+        // ROMAN Numerals style
+        "hyprland/workspaces#roman": {
+            "active-only": false,
+            "all-outputs": true,
+            "format": "{icon}",
+            "show-special": false,
+            "on-click": "activate",
+            "on-scroll-up": "hyprctl dispatch workspace e+1",
+            "on-scroll-down": "hyprctl dispatch workspace e-1",
+            "persistent-workspaces": {
+                "*": 5
+            },
+            "format-icons": {
+                "1": "I",
+                "2": "II",
+                "3": "III",
+                "4": "IV",
+                "5": "V",
+                "6": "VI",
+                "7": "VII",
+                "8": "VIII",
+                "9": "IX",
+                "10": "X",
+            },
+        },
+
+        // Kanji / Japanese style
+        "hyprland/workspaces#kanji": {
+            "disable-scroll": true,
+            "show-special": false,
+            "all-outputs": true,
+            "format": "{icon}",
+            "persistent-workspaces": {
+                "*": 5
+            },
+            "format-icons": {
+                "1": "一",
+                "2": "二",
+                "3": "三",
+                "4": "四",
+                "5": "五",
+                "6": "六",
+                "7": "七",
+                "8": "八",
+                "9": "九",
+                "10": "十",
+            }
+        },
+
+        // Kanji / Japanese style
+        "hyprland/workspaces#kanji": {
+            "disable-scroll": true,
+            "show-special": false,
+            "all-outputs": true,
+            "format": "{icon}",
+            "persistent-workspaces": {
+                "*": 5
+            },
+            "format-icons": {
+                "1": "一",
+                "2": "二",
+                "3": "三",
+                "4": "四",
+                "5": "五",
+                "6": "六",
+                "7": "七",
+                "8": "八",
+                "9": "九",
+                "10": "十",
+            }
+        },
+
+        // for German 
+        "hyprland/workspaces#ger": {
+            "active-only":false,
+            "all-outputs": true,
+            "format": "{icon}",
+            "show-special": false,
+            "on-click": "activate",
+            "on-scroll-up": "hyprctl dispatch workspace e+1",
+            "on-scroll-down": "hyprctl dispatch workspace e-1",
+            "persistent-workspaces": {
+                "*": 5
+            },
+            "format-icons": {
+                "1": "Eins",
+                "2": "Zwei",
+                "3": "Drei",
+                "4": "Vier",
+                "5": "Fünf",
+                "6":"Sechs",
+                "7":"Sieben",
+                "8":"Acht",
+                "9":"Nuen",
+                "10":"Zehn"
+            }	
+        },
+}

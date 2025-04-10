@@ -1,0 +1,70 @@
+{
+    "include": [
+        "$HOME/.config/waybar/modules",
+    ],
+
+    "layer": "top",
+    "exclusive": true,
+    "passthrough": false,
+    "position": "top",
+    "spacing": 4,
+    "fixed-center": true,
+    "ipc": true,
+    //"margin-top": 0,
+    //"margin-bottom": 0,
+    //"margin-left": 0,
+    //"margin-right": 0,
+
+    "modules-left": [
+        "clock",
+        "custom/separator#line",
+        "hyprland/workspaces#ger"
+    ],
+
+    "modules-center": [
+        "custom/archicon"], 
+
+    "modules-right": [
+        "tray",
+        "custom/separator#line",
+        "backlight",
+        "backlight/slider",
+        "pulseaudio",
+        "pulseaudio/slider",
+        "custom/separator#line",
+        "battery",
+    ],
+
+    // Additional modules //
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+
+    },
+
+    "custom/speaker": {
+        "exec": "echo '🔊'",  
+        "interval": 1,
+        "format": "{}"
+    },
+
+    "backlight/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal",
+        "device": "intel_backlight"
+    },
+
+    "custom/backlight": {
+        "exec": "echo '✨'",  
+        "interval": 1,
+        "format": "{}"
+    },
+
+    "custom/archicon": {
+        "format": " 󰣇 ",
+        "tooltip": false,
+        "on-click": "swaync-client -t -sw"
+    }
+}

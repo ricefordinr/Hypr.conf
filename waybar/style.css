@@ -1,0 +1,176 @@
+@import "../../.config/waybar/colors.css";
+
+* {
+  font-family: "JetBrainsMonoNL Nerd Font";
+  font-weight: bold;
+  min-height: 0;
+  /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
+  font-size: 99%;
+  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+}
+
+window#waybar {
+  background: @crust;
+  border-radius: 0px;
+}
+
+window#waybar.hidden {
+  opacity: 0.5;
+}
+
+tooltip {
+  color: @text;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+}
+
+tooltip label {
+  color: @text;
+  padding-right: 2px;
+  padding-left: 2px;
+}
+
+/*-----module groups----*/
+.modules-left,
+.modules-center,
+.modules-right {
+  border-radius: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-right: 4px;
+  padding-left: 4px;
+}
+
+#taskbar button,
+#workspaces button {
+  color: @accent;
+  font-weight: 900;
+  box-shadow: none;
+  text-shadow: none;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 0px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#taskbar button.active,
+#workspaces button.active {
+  color: @text;
+  background: @accent;
+  text-shadow: 1px 1px #111;
+  /* box-shadow: 4px 4px @text; */
+  border-radius: 3px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#workspaces button.focused {
+  color: @text;
+}
+
+#workspaces button.urgent {
+  color: #11111b;
+  border-radius: 3px;
+}
+
+#taskbar button:hover,
+#workspaces button:hover {
+  /*color: @color9;*/
+  border-color: @accent;
+  border-radius: 3px;
+  /*padding-left: 2px;*/
+  /*  padding-right: 2px;*/
+  animation: gradient_f 20s ease-in infinite;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
+}
+
+#backlight,
+#backlight-slider,
+#battery,
+#bluetooth,
+#clock,
+#idle_inhibitor,
+#network,
+#pulseaudio,
+#pulseaudio-slider,
+#taskbar,
+#tray,
+#workspaces {
+  color: @accent;
+  border-radius: 8px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 6px;
+  padding-left: 6px;
+}
+
+#tray {
+  background-color: @crust;
+  box-shadow: 0px 4px @accent;
+  border-radius: 3px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+@keyframes blink {
+  to {
+    color: @yellow;
+  }
+}
+
+#battery.critical:not(.charging) {
+  color: @yellow;
+  animation-name: blink;
+  animation-duration: 3s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#backlight-slider slider,
+#pulseaudio-slider slider {
+  min-width: 0px;
+  min-height: 0px;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+#backlight-slider trough,
+#pulseaudio-slider trough {
+  min-width: 80px;
+  min-height: 5px;
+  border-radius: 5px;
+}
+
+#backlight-slider highlight,
+#pulseaudio-slider highlight {
+  background-color: @accent;
+  border-color: @accent;
+  min-height: 10px;
+  border-radius: 5px;
+}
+
+#custom-archicon {
+  font-size: 24;
+  color: @accent;
+  /*background-image: url('/home/rice/dotfiles/misc/assets/archlinux-icon.png');*/
+  /*background-position: center;*/
+  /*background-repeat: no-repeat;*/
+  /*background-size: 20px; */
+  transition: all 0.5s;
+}
+#custom-archicon:focus,
+#custom-archicon:hover {
+  color: @sapphire;
+}
+
+#custom-separator {
+  color: @accent;
+}

@@ -1,0 +1,20 @@
+# This file is only used to take note of dependencies that are used
+
+# Hyprland deps:
+hyprland
+hyprlock
+hypridle
+hyprpaper
+pyprland
+
+# Wayland deps (excluded Hyprland's):
+waybar
+swaync
+wlogout (?? Planning to use rofi/fuzzel instead)
+wl-clipboard
+swaybg
+
+# Other deps
+rofi
+fuzzel (replace rofi)
+cliphist
