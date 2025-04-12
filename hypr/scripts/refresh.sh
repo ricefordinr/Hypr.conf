@@ -13,9 +13,9 @@ for process in "${processes[@]}"; do
     fi
 done
 
-sleep 0.5
 swaync > /dev/null 2>&1 &
 waybar &
+pkill swaybg
 swaybg --image $HOME/.config/hypr/assets/background/wallpaper.png
 
 exit 0
