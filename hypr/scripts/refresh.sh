@@ -16,5 +16,6 @@ done
 sleep 0.5
 swaync > /dev/null 2>&1 &
 waybar &
+swaybg --image $HOME/.config/hypr/assets/background/wallpaper.png
 
 exit 0

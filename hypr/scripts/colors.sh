@@ -2,8 +2,8 @@
 
 # Configuration files to update
 FILES=(
-    "$HOME/.config/hypr/colorscheme.conf"  # Cache file - source of truth
-    "$HOME/.config/fuzzel/fuzzel.ini"
+    "$HOME/.config/hypr/colorscheme.conf"  # Cache file - must be first
+    "$HOME/.config/fuzzel/colors.ini"
     "$HOME/.config/waybar/colors.css"
 )
 
@@ -205,7 +205,7 @@ set_accent_color() {
                 ;;
                 
             ini)
-                # For fuzzel.ini
+                # For fuzzel/colors.ini
                 local ini_hex="${hex_code,,}ff"  # Lowercase + alpha channel
                 
                 # Create a temporary file
@@ -214,7 +214,6 @@ set_accent_color() {
                 
                 # Process the file
                 local in_accents=false
-                local in_border=false
                 
                 while IFS= read -r line; do
                     if [[ "$line" == "#ACCENTS" ]]; then
@@ -223,28 +222,16 @@ set_accent_color() {
                     elif [[ "$line" == "#END" ]]; then
                         in_accents=false
                         echo "$line" >> "$temp_file"
-                    elif [[ "$line" == "[border]" ]]; then
-                        in_border=true
-                        echo "$line" >> "$temp_file"
-                    elif [[ "$line" =~ ^\[.*\]$ ]]; then
-                        in_border=false
-                        echo "$line" >> "$temp_file"
                     elif $in_accents; then
                         # Update colors in ACCENTS section
-                        if [[ "$line" =~ ^(selection|match|border)= ]]; then
-                            key="${BASH_REMATCH[1]}"
-                            echo "$key=$ini_hex" >> "$temp_file"
-                        else
-                            echo "$line" >> "$temp_file"
-                        fi
-                    elif $in_border; then
-                        # Update colors in border section
-                        if [[ "$line" =~ ^(red|accent)= ]]; then
-                            key="${BASH_REMATCH[1]}"
-                            echo "$key=$ini_hex" >> "$temp_file"
-                        else
-                            echo "$line" >> "$temp_file"
-                        fi
+                        # if [[ "$line" =~ ^(selection|match|border)= ]]; then
+                        #     key="${BASH_REMATCH[1]}"
+                        #     echo "$key=$ini_hex" >> "$temp_file"
+                        # else
+                        #     echo "$line" >> "$temp_file"
+                        # fi
+                        key=(${line//=/ })
+                        echo "$key=$ini_hex" >> "$temp_file"
                     else
                         # Other sections
                         if [[ "$line" =~ ^accent= ]]; then
@@ -264,6 +251,14 @@ set_accent_color() {
     done
     
     echo "Successfully updated accent color to $color_name (#$hex_code) across all configuration files"
+}
+
+sync_background() {
+    local color_name="$1"
+    pngDir="$HOME/.config/hypr/assets/cat_colored_backgrounds"
+    bgDir="$HOME/.config/hypr/assets/background"
+    ln -sf $pngDir/$color_name.png $bgDir/lockscreen.png
+    ln -sf $pngDir/$color_name.png $bgDir/wallpaper.png
 }
 
 # Main script execution
@@ -336,6 +331,7 @@ if [[ "$show_accent" == true ]]; then
 fi
 
 if [[ -n "$set_color" ]]; then
+    sync_background "$set_color"
     set_accent_color "$set_color"
 fi
 
