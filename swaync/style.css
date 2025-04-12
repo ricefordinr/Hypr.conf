@@ -1,0 +1,289 @@
+/* sync with waybar */
+@import "../../.config/waybar/colors.css";
+
+* {
+  font-family: "JetBrains Mono Nerd Font";
+  font-weight: bold;
+}
+
+.control-center,
+.control-center {
+  opacity: 1;
+  background: @crust;
+  border-radius: 0px;
+}
+
+notification-row:focus,
+notification-row:hover {
+  background: @accent;
+  color: @crust;
+}
+
+.notification-row {
+  outline: none;
+  margin: 0px;
+}
+
+.notification {
+  border-radius: 0px;
+}
+
+.notification-content {
+  color: @text;
+  background: @crust;
+  padding: 3px 10px 3px 6px;
+  border-radius: 0px;
+  border: 3px solid @accent;
+  margin: 0px;
+}
+
+.notification-default-action {
+  margin: 0;
+  padding: 0;
+  border-radius: 0px;
+}
+
+.close-button {
+  background: @red;
+  color: @crust;
+  text-shadow: none;
+  padding: 0;
+  border-radius: 0px;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.close-button:hover {
+  box-shadow: none;
+  background: @red;
+  transition: all 0.15s ease-in-out;
+  border: none;
+}
+
+.notification-action {
+  border: 3px solid @accent;
+  border-top: none;
+  border-radius: 0px;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  color: @crust;
+  background: @accent;
+}
+
+.notification-default-action {
+  border-radius: 0px;
+  margin: 5px;
+}
+
+.notification-default-action:not(:only-child) {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.notification-action:first-child {
+  border-radius: 0px 0px 0px 0px;
+  background: @crust;
+}
+
+.notification-action:last-child {
+  border-radius: 0px 0px 0px 0px;
+  /* background: @overlay0; */
+}
+
+.inline-reply {
+  margin-top: 8px;
+}
+
+.inline-reply-entry {
+  background: @crust;
+  color: @text;
+  caret-color: @text;
+  /* border: 3px solid @accent; */
+  border-radius: 0px;
+}
+
+.inline-reply-button {
+  font-size: 0.5rem;
+  margin-left: 4px;
+  background: @crust;
+  /* border: 3px solid @accent; */
+  border-radius: 0px;
+  color: @text;
+}
+
+.inline-reply-button:disabled {
+  background: initial;
+  color: @text;
+  /* border: 1px solid transparent; */
+}
+
+.inline-reply-button:hover {
+  background: @accent;
+  color: @crust;
+  /* background: @overlay0; */
+}
+
+.body-image {
+  margin-top: 6px;
+  color: @text;
+  border-radius: 0px;
+}
+
+.summary {
+  font-size: 1rem;
+  font-weight: bold;
+  background: transparent;
+  color: @text;
+  text-shadow: none;
+}
+
+.time {
+  font-size: 1rem;
+  font-weight: bold;
+  background: transparent;
+  color: @text;
+  text-shadow: none;
+  margin-right: 18px;
+}
+
+.body {
+  font-size: 1rem;
+  font-weight: bold;
+  background: transparent;
+  color: @text;
+  text-shadow: none;
+}
+
+.control-center {
+  background: @crust;
+  border: 3px solid @accent;
+  color: @text;
+  border-radius: 0px;
+}
+
+.control-center-list {
+  background: transparent;
+}
+
+.control-center-list-placeholder {
+  opacity: 0.5;
+}
+
+.floating-notifications {
+  background: transparent;
+}
+
+.blank-window {
+  background: alpha(black, 0.1);
+}
+
+.widget-title {
+  color: @accent;
+  /* background: @overlay0; */
+  padding: 3px 6px;
+  margin: 5px;
+  font-size: 1rem;
+  border-radius: 0px;
+}
+
+.widget-title > button {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: @text;
+  border-radius: 0px;
+  background: @crust;
+  border: 3px solid @accent;
+}
+
+.widget-title > button:hover {
+  background: @accent;
+  color: @crust;
+}
+
+.widget-dnd {
+  /* background: @overlay0; */
+  padding: 3px 6px;
+  margin: 5px;
+  border-radius: 0px;
+  font-size: 1rem;
+  color: @accent;
+}
+
+.widget-dnd > switch {
+  border-radius: 0px;
+  /* border: 1px solid #7aa2f7; */
+  background: @overlay0;
+}
+
+.widget-dnd > switch:checked {
+  background: @red;
+  border: 1px solid @red;
+}
+
+.widget-dnd > switch slider {
+  background: @crust;
+  border-radius: 0px;
+  border: 2px @overlay0 solid;
+}
+
+.widget-dnd > switch:checked slider {
+  background: @crust;
+  border-radius: 0px;
+  border: 2px @red solid;
+}
+
+.widget-label {
+  margin: 5px;
+}
+
+.widget-label > label {
+  font-size: 1rem;
+  color: @text;
+}
+
+.widget-mpris {
+  color: @text;
+  /* background: @overlay0; */
+  padding: 3px 6px;
+  margin: 5px;
+  border-radius: 0px;
+}
+
+.widget-mpris > box > button {
+  border-radius: 0px;
+}
+
+.widget-mpris-player {
+  padding: 3px 6px;
+  margin: 5px;
+}
+
+.widget-mpris-title {
+  font-weight: 100;
+  font-size: 1rem;
+}
+
+.widget-mpris-subtitle {
+  font-size: 0.75rem;
+}
+
+.low {
+  background: @crust;
+  padding: 0px;
+  border-radius: 0px;
+}
+
+.normal {
+  background: @crust;
+  padding: 0px;
+  border-radius: 0px;
+}
+
+.critical {
+  background: @crust;
+  padding: 0px;
+  border-radius: 0px;
+  border: 1px solid @red;
+}
