@@ -23,6 +23,6 @@ case "$chosen" in
         systemctl reboot
         ;;
     3)
-        systemctl kill-session $XDG_SESSION_ID
+        loginctl kill-session $XDG_SESSION_ID
         ;;
 esac
